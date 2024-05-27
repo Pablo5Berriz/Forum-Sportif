@@ -1,0 +1,46 @@
+﻿@model Forum_rufine_et_paul.Models.Category
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Mis à jour de la Catégorie</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CatPk" />
+            <div class="form-group">
+                <label asp-for="CatName" class="control-label">NOM</label>
+                <input asp-for="CatName" class="form-control" />
+                <span asp-validation-for="CatName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDesc" class="control-label">Description</label>
+                <input asp-for="CatDesc" class="form-control" />
+                <span asp-validation-for="CatDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatImg" class="control-label">Image</label>
+                <input asp-for="CatImg" class="form-control" />
+                <span asp-validation-for="CatImg" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatActif" class="control-label">Discontinuite</label>
+                <input asp-for="CatActif" class="form-control" />
+                <span asp-validation-for="CatActif" class="text-danger"></span>
+            </div>
+            <div class="form-group m-2">
+                <input type="submit" value="Sauvegarder" class="btn btn-primary" />
+                <a class="btn btn-secondary" asp-action="Index">Retour</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,63 @@
+﻿@model Forum_rufine_et_paul.Models.Question
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Suppression de la question</h1>
+
+<h3>Êtes-vous certain de vouloir supprimer cette question?</h3>
+<div>
+    <h4>Question</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Auteur
+        </dt>
+        <dd class="col-sm-10">
+            @Model.UserFkNavigation.UserName
+        </dd>
+        <dt class="col-sm-2">
+            Titre
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.QuestTitle)
+        </dd>
+        <dt class="col-sm-2">
+            Énoncé
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.QuestText)
+        </dd>
+        <dt class="col-sm-2">
+            Date
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuestDate)
+        </dd>
+        <dt class="col-sm-2">
+            Vues
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuestViews)
+        </dd>
+        <dt class="col-sm-2">
+            Statut
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuestActif)
+        </dd>
+        <dt class="col-sm-2">
+            Catégorie
+        </dt>
+        <dd class="col-sm-10">
+            @Model.CatFkNavigation.CatName
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post" onsubmit="return confirm('Confirmez-vous la suppression de cette question ?');">
+        <input type="hidden" asp-for="QuestPk" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" /> 
+        <a asp-action="Index" asp-route-catid="@Model.CatFk" class="btn btn-secondary">Retour</a>
+    </form>
+</div>

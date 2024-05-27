@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Forum_rufine_et_paul.props" />
+</Project>

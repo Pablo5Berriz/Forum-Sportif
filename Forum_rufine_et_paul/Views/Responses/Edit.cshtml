@@ -1,0 +1,36 @@
+﻿@model Forum_rufine_et_paul.Models.Response
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Mise à jour de la réponse</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RespPk" />
+            <input type="hidden" asp-for="RespActif" />
+            <input type="hidden" asp-for="QuestFk" />
+
+            <div class="form-group">
+                <label asp-for="RespText" class="control-label">Réponse</label>
+                <textarea asp-for="RespText" class="form-control"></textarea>
+                <span asp-validation-for="RespText" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                <a asp-action="Index" asp-route-Questid="@Model.QuestFk" class="btn btn-primary">Retour</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

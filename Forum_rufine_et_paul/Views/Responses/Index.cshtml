@@ -1,0 +1,78 @@
+﻿@using System.Security.Claims
+@using Forum_rufine_et_paul.Tools
+@model PaginatedList<Forum_rufine_et_paul.Models.Response>
+
+@{
+    ViewData["Title"] = "Index";
+    string currentuser = User.Identity.Name;
+    var catfk = ViewData["catfk"];
+}
+
+<h1>Réponses aux questions du Forum</h1>
+
+<p>
+    <a asp-controller="Questions" asp-action="Index" asp-route-catid="@catfk" class="btn btn-primary">Retour aux Questions</a>
+</p>
+
+<h2>@Html.Raw(ViewData["QuestText"])</h2>
+
+<div class="responses-container">
+    @foreach (var item in Model)
+    {
+        <div class="response-card my-3 p-3 shadow-sm">
+            <div class="d-flex justify-content-between">
+                <div class="user-info">
+                    <p class="username"><strong><i class="glyphicon glyphicon-user"></i> @item.UserFkNavigation.UserName</strong></p>
+                    <p class="date text-muted">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                        <em>
+                            @if (item.RespDate.HasValue)
+                            {
+                                @item.RespDate.Value.ToString("dd/MM/yyyy")
+                            }
+                            else
+                            {
+                                <span>Date inconnue</span>
+                            }
+                        </em>
+                    </p>
+                </div>
+                <div class="response-content">
+                    @Html.Raw(item.RespText)
+                </div>
+
+                @if (User.Identity.IsAuthenticated && item.UserFk == User.FindFirst(ClaimTypes.NameIdentifier)?.Value || User.IsInRole("Admin"))
+                {
+                    <div class="response-actions">
+                        <a asp-action="Edit" asp-route-id="@item.RespPk" class="btn btn-warning">Modifier</a>
+                        <a asp-action="Delete" asp-route-id="@item.RespPk" class="btn btn-danger">Supprimer</a>
+                    </div>
+                }
+
+            </div>
+        </div>
+    }
+</div>
+
+
+@* Pagination *@
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-Questid="@ViewData["Questfk"]" asp-route-pageNumber="1" class="page-link">Première</a>
+        </li>
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-Questid="@ViewData["Questfk"]" asp-route-pageNumber="@(Model.PageIndex - 1)" class="page-link">Précédent</a>
+        </li>
+        <!-- Current Page Indicator -->
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">Page @Model.PageIndex sur @Model.TotalPages</span>
+        </li>
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-Questid="@ViewData["Questfk"]" asp-route-pageNumber="@(Model.PageIndex + 1)" class="page-link">Suivant</a>
+        </li>
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-Questid="@ViewData["Questfk"]" asp-route-pageNumber="@Model.TotalPages" class="page-link">Dernière</a>
+        </li>
+    </ul>
+</nav>

@@ -1,0 +1,47 @@
+﻿@model Forum_rufine_et_paul.Models.Question
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Mise à jour de la question</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-8">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <input type="hidden" asp-for="QuestPk" />
+            <input type="hidden" asp-for="CatFk" />
+            <input type="hidden" asp-for="QuestDate" />
+
+            <div class="form-group">
+                <label asp-for="QuestTitle" class="control-label">Titre</label>
+                <input asp-for="QuestTitle" class="form-control" />
+                <span asp-validation-for="QuestTitle" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="QuestText" class="control-label">Énoncé</label>
+                <textarea asp-for="QuestText" class="form-control"></textarea>
+                <span asp-validation-for="QuestText" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="QuestActif" class="control-label">Statut</label>
+                <input asp-for="QuestActif" class="form-control" />
+                <span asp-validation-for="QuestActif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Enregistrer" class="btn btn-primary" />
+                <a asp-action="Index" asp-route-catid="@Model.CatFk" class="btn btn-secondary">Retour</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

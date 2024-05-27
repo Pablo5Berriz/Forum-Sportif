@@ -1,0 +1,98 @@
+﻿@using Forum_rufine_et_paul.Tools
+@using System.Security.Claims
+@model PaginatedList<Forum_rufine_et_paul.ViewModels.custquest>
+
+@{
+    ViewData["Title"] = "Index";
+    var catfk = ViewData["catfk"];
+    var custPageSize = ViewData["custPageSize"] ?? 5;
+}
+
+<h1>Questions</h1>
+@if (User.Identity.IsAuthenticated)
+{
+    <p>
+        <a asp-action="Create" asp-route-catid="@catfk" class="btn btn-primary">Posez une Question</a>
+    </p>
+}
+
+<div>
+    <h3>Par Page:</h3>
+    <select class="m-2" id="custPageSize" name="custPageSize" asp-route-catid="@catfk" onchange="location.href='?catid='+@catfk+'&custPageSize='+this.value">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+    </select>
+
+    <script>
+        document.getElementById('custPageSize').value = '@custPageSize';
+    </script>
+</div>
+
+<p><a asp-controller="Categories" asp-action="Index" class="btn btn-primary">Retour</a></p>
+
+@foreach (var item in Model)
+{
+    
+    <div class="question-card my-3 p-3 shadow-sm">
+        <div class="d-flex justify-content-between">
+            <div class="user-info">
+                
+                <div>
+                    <i class="glyphicon glyphicon-user"></i>
+                    <span>@item.UserName</span>
+                </div>@* <p class="username">@item.UserName</p> *@
+                <p class="date text-muted"><span class="glyphicon glyphicon-calendar"></span><em>@item.QuestDate.ToShortDateString()</em></p>
+            </div>
+            <div class="question-stats">
+                <p class="views"><span class="glyphicon glyphicon-eye-open"></span> @item.QuestViews vues</p>
+                <p class="responses"><span class="glyphicon glyphicon-comment"></span> @item.TotalReponses Réponses</p>
+            </div>
+        </div>
+        <div class="question-content">
+            <a asp-controller="Responses" asp-action="Index" asp-route-Questid="@item.QuestPk" class="question-title">@item.QuestTitle</a>
+            <p class="last-activity text-muted">Dernière activité par @item.DernierPosteur le @item.DateDerniereReponse.ToShortDateString()</p>
+        </div>
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div>
+                <a asp-action="Create" asp-controller="Responses" asp-route-questfk="@item.QuestPk" class="btn btn-success">Répondre à cette Question</a>
+            </div>
+        }
+
+        <div>
+            <a asp-action="Details" asp-route-id="@item.QuestPk" class="btn btn-info m-2">Détails</a>
+            @if ((User.Identity.IsAuthenticated && item.UserFk == User.FindFirst(ClaimTypes.NameIdentifier)?.Value)||User.IsInRole("Admin"))
+            {
+                
+                    <a asp-action="Edit" asp-route-id="@item.QuestPk">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@item.QuestPk">Supprimer</a>
+               
+            }
+        </div>
+    </div>
+}
+
+@* Pagination*@
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-catid="@catfk" asp-route-pageNumber="1" asp-route-custPageSize="@custPageSize" class="page-link">Première</a>
+        </li>
+        <li class="page-item @(Model.HasPreviousPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-catid="@catfk" asp-route-pageNumber="@(Model.PageIndex - 1)" asp-route-custPageSize="@custPageSize" class="page-link">Précédent</a>
+        </li>
+        <!-- Current Page -->
+        <li class="page-item active" aria-current="page">
+            <span class="page-link">Page @Model.PageIndex sur @Model.TotalPages</span>
+        </li>
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-catid="@catfk" asp-route-pageNumber="@(Model.PageIndex + 1)" asp-route-custPageSize="@custPageSize" class="page-link">Suivant</a>
+        </li>
+        <li class="page-item @(Model.HasNextPage ? "" : "disabled")">
+            <a asp-action="Index" asp-route-catid="@catfk" asp-route-pageNumber="@Model.TotalPages" asp-route-custPageSize="@custPageSize" class="page-link">Dernière</a>
+        </li>
+    </ul>
+</nav>

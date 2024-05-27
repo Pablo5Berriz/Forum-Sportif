@@ -1,0 +1,54 @@
+﻿@model Forum_rufine_et_paul.Models.Response
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails de la réponse</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Auteur :
+        </dt>
+        <dd class="col-sm-10">
+            @Model.UserFkNavigation.UserName
+        </dd>
+        <dt class="col-sm-2">
+            Énoncé :
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.RespText)
+        </dd>
+        <dt class="col-sm-2">
+            Date :
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.RespDate.HasValue)
+            {
+                @Model.RespDate.Value.ToString("dd/MM/yyyy")
+            }
+            else
+            {
+                <span>Date non spécifiée</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            Statut :
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.RespActif.HasValue ? (Model.RespActif.Value ? "Actif" : "Inactif") : "Inconnu")
+        </dd>
+        <dt class="col-sm-2">
+            Question :
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.QuestFkNavigation.QuestText)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-Questid="@Model.QuestFk" class="btn btn-primary">Retour</a>
+</div>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Forum_rufine_et_paul.ViewModels.homecat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="row d-flex justify-content-around">
+    <h1 class="text-center">Liste des catégories sélectionnées</h1>
+
+    @if (User.IsInRole("Admin"))
+    {
+        <p>
+            <a asp-controller="Categories" asp-action="Create" class="btn btn-primary">Ajouter Une Catégorie</a>
+        </p>
+    }
+
+    @foreach (var item in Model)
+    {
+        <div class="card mt-8 m-5 text-center" style="width: 18rem; margin-left: auto; margin-right: auto;">
+            @if (!string.IsNullOrEmpty(item.CatImg))
+            {
+                <img class="card-img-top" src="@Url.Content(item.CatImg)" alt="@item.CatName" />
+            }
+            <div class="card-body">
+                <h5 class="card-title">@item.CatName</h5>
+                @foreach (var quest in item.Questions)
+                {
+                    <div class="d-flex p-2 d-flex justify-content-start">
+                        <p><span class="glyphicon glyphicon-hand-right"></span>
+                        <a class="link-underline-light text-black" asp-controller="Responses" asp-action="Index" asp-route-Questid="@quest.QuestPk">
+                            @quest.QuestTitle
+                            </a>
+                        </p>
+                    </div>
+                   
+                }
+
+                <a asp-controller="Questions" asp-action="Index" asp-route-catid="@item.CatPk" class="btn btn-primary btn-details d-block mx-auto">En savoir plus</a>
+
+                @if (User.IsInRole("Admin"))
+                {
+                    <a asp-action="Details" asp-route-id="@item.CatPk" class="btn btn-primary m-2">Détails</a>
+                    <a asp-controller="Categories" asp-action="Delete" asp-route-id="@item.CatPk" class="btn btn-danger m-2">Supprimer</a>
+                    <a asp-controller="Categories" asp-action="Edit" asp-route-id="@item.CatPk" class="btn btn-secondary m-2">Mise à jour</a>
+                }
+            </div>
+        </div>
+    }
+</div>

@@ -1,0 +1,36 @@
+﻿@model Forum_rufine_et_paul.Models.Response
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>@Html.Raw(ViewData["QuestText"])</h1>
+
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <input type="hidden" asp-for="QuestFk" value="@ViewData["QuestFk"]" />
+                <span asp-validation-for="QuestFk" class="text-danger"></span>
+
+                <label asp-for="RespText" class="control-label">Réponse</label>
+                <textarea asp-for="RespText" class="form-control"></textarea>
+                <span asp-validation-for="RespText" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Poster" class="btn btn-primary" />
+                <a asp-action="Index" asp-route-Questid="@ViewData["QuestFk"]" class="btn btn-primary">Retour</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

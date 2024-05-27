@@ -1,0 +1,67 @@
+﻿@model Forum_rufine_et_paul.Models.Response
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Suppression de la réponse</h1>
+
+<h3>Êtes-vous certain de vouloir supprimer cette réponse ?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Auteur
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.UserFkNavigation != null)
+            {
+                @Model.UserFkNavigation.UserName
+            }
+            else
+            {
+                <span>Utilisateur inconnu</span>
+            }
+        </dd>
+
+        <dt class="col-sm-2">
+            Énoncé :
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.RespText) 
+        </dd>
+        <dt class="col-sm-2">
+            Date :
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.RespDate.HasValue)
+            {
+                @Model.RespDate.Value.ToString("dd/MM/yyyy")
+            }
+            else
+            {
+                <span>Date non spécifiée</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            Statut :
+        </dt>
+        <dd class="col-sm-10">
+            @(Model.RespActif.HasValue ? (Model.RespActif.Value ? "Actif" : "Inactif") : "Inconnu")
+        </dd>
+        <dt class="col-sm-2">
+            Question :
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuestFkNavigation.QuestText) 
+        </dd>
+    </dl>
+
+    <form asp-action="Delete" method="post">
+        @Html.AntiForgeryToken()
+
+        <input type="hidden" asp-for="RespPk" />
+        <input type="submit" value="Supprimer" class="btn btn-danger" />
+        <a asp-action="Index" asp-route-Questid="@Model.QuestFk" class="btn btn-danger">Retour</a>
+    </form>
+</div>

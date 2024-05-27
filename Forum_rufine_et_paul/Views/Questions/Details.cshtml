@@ -1,0 +1,65 @@
+﻿@model Forum_rufine_et_paul.Models.Question
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails de la question</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Auteur
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.UserFkNavigation.UserName)
+        </dd>
+        <dt class="col-sm-2">
+            Titre
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.QuestTitle)
+        </dd>
+        <dt class="col-sm-2">
+            Énoncé
+        </dt>
+        <dd class="col-sm-10">
+            @Html.Raw(Model.QuestText)
+        </dd>
+        <dt class="col-sm-2">
+            Date de création
+        </dt>
+        <dd class="col-sm-10">
+            @Model.QuestDate.ToString("dd/MM/yyyy")
+        </dd>
+        <dt class="col-sm-2">
+            Nombre de vues
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.QuestViews)
+        </dd>
+        <dt class="col-sm-2">
+            Statut
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.QuestActif.HasValue)
+            {
+                @(Model.QuestActif.Value ? "Actif" : "Inactif")
+            }
+            else
+            {
+                <span>Statut inconnu</span>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            Catégorie
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CatFkNavigation.CatName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" asp-route-catid="@Model.CatFk" class="btn btn-primary">Retour</a>
+</div>

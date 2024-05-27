@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Forum_rufine_et_paul.ViewModels.Userstat>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Statistiques de participation des utilisateurs</h1>
+
+<p><a asp-controller="Categories" asp-action="Index" class="btn btn-primary">Retour</a></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Identifiant</th>
+            <th>Email</th>
+            <th>Nom d'utilisateur</th>
+            <th>Total Sujets Postés</th>
+            <th>Total Réponses Postées</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserId</td>
+                <td>@item.Email</td>
+                <td>@item.UserName</td>
+                <td>@item.TotalQuestions</td>
+                <td>@item.TotalReponses</td>
+            </tr>
+        }
+    </tbody>
+</table>
