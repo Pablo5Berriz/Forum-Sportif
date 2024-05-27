@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\views\\categories\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\areas\\identity\\pages\\account\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\views\\responses\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\views\\responses\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\views\\questions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\views\\questions\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\controllers\\responsescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\controllers\\responsescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|d:\\video\\tp2versionfinal\\tp2w24ruf\u0026paul\\forum_rufine_et_paul\\forum_rufine_et_paul\\views\\responses\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{228E03C4-7E92-4092-A4E2-0E82A36BC831}|Forum_rufine_et_paul\\Forum_rufine_et_paul.csproj|solutionrelative:forum_rufine_et_paul\\views\\responses\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACQAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T12:15:19.531Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Questions\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Views\\Questions\\Edit.cshtml",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Questions\\Edit.cshtml",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Views\\Questions\\Edit.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T12:15:19.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Categories\\Index.cshtml",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Views\\Categories\\Index.cshtml",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Categories\\Index.cshtml",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Views\\Categories\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T12:15:19.532Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Responses\\Details.cshtml",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Views\\Responses\\Details.cshtml",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Responses\\Details.cshtml",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Views\\Responses\\Details.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAC4AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T12:15:19.534Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Areas\\Identity\\Pages\\Account\\Login.cshtml.cs",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAAAIAAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T12:15:19.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Responses\\Delete.cshtml",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Views\\Responses\\Delete.cshtml",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Views\\Responses\\Delete.cshtml",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Views\\Responses\\Delete.cshtml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-27T12:15:19.538Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ResponsesController.cs",
+              "DocumentMoniker": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Controllers\\ResponsesController.cs",
+              "RelativeDocumentMoniker": "Forum_rufine_et_paul\\Controllers\\ResponsesController.cs",
+              "ToolTip": "D:\\Video\\Tp2VersionFinal\\Tp2W24Ruf\u0026Paul\\Forum_rufine_et_paul\\Forum_rufine_et_paul\\Controllers\\ResponsesController.cs",
+              "RelativeToolTip": "Forum_rufine_et_paul\\Controllers\\ResponsesController.cs",
+              "ViewState": "AQIAAKQAAAAAAAAAAAAuwMsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-27T12:15:19.54Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
